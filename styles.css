@@ -1,0 +1,585 @@
+/* ===========================================================
+   General Reset and Base Styles
+   =========================================================== */
+   body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    background-color: #f7f7f7; /* Light gray background */
+    color: #333; /* Dark gray text */
+}
+
+/* ===========================================================
+   Navbar Styling
+   =========================================================== */
+   .navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #F06021; /* Bright orange background */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    z-index: 1000;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+  }
+  
+  /* Navbar when scrolled */
+  .navbar.scrolled {
+    background-color: rgba(240, 96, 33, 0.9); /* Slightly transparent orange */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Stronger shadow on scroll */
+  }
+  
+  /* Logo Styling */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Reduced space between the logo image and brand name */
+    font-size: 1.5rem; /* Smaller font size for the logo text */
+    font-weight: 700; /* Bold font */
+    color: #ffffff; /* Clean white for the text */
+    text-transform: uppercase;
+    letter-spacing: 1.2px; /* Slightly tighter letter spacing */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* Subtle shadow for readability */
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+  }
+  
+  .logo span {
+    font-family: 'Poppins', sans-serif; /* Modern, clean font */
+    font-weight: 700; /* Slightly lighter than before */
+    color: #ffffff; /* White text for contrast */
+    letter-spacing: 1.2px; /* Matches parent letter spacing */
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .logo:hover span {
+    color: #1BB0DA; /* Bright blue on hover */
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4); /* Slightly deeper shadow */
+    transform: scale(1.05); /* Subtle hover effect */
+  }
+  
+  .logo-image {
+    height: 30px; /* Smaller logo image */
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+  }
+  
+  .logo-image:hover {
+    transform: scale(1.1); /* Slight enlargement on hover */
+  }
+  
+  
+  /* Menu Styling */
+  .menu {
+    display: flex;
+    flex-direction: row; /* Horizontal layout */
+    gap: 30px;
+    background-color: transparent;
+    padding: 0;
+  }
+  
+  .menu a {
+    text-decoration: none;
+    color: #ffffff; /* White for menu links */
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative; /* Needed for underline effect */
+    transition: color 0.3s ease, background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  /* Always Visible Underline */
+  .menu a::after {
+    content: ''; /* Creates the line under the text */
+    position: absolute;
+    bottom: 0; /* Align the line directly under the text */
+    left: 0;
+    width: 100%; /* Full width underline */
+    height: 2px; /* Line thickness */
+    background-color: #ffffff; /* White color for the underline */
+  }
+  
+  .menu a:hover {
+    color: #1BB0DA; /* Bright blue text on hover */
+  }
+  
+  .menu a:hover::after {
+    background-color: #1BB0DA; /* Bright blue underline on hover */
+  }
+  
+  /* Mobile Menu Toggle */
+  .menu-toggle {
+    display: none; /* Hidden on larger screens */
+    font-size: 2rem;
+    cursor: pointer;
+    color: #ffffff;
+    z-index: 1301;
+  }
+  
+  /* Mobile Specific Navbar */
+  @media (max-width: 768px) {
+    .menu {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%; /* Full screen */
+      background-color: #F06021; /* Bright orange background */
+      transform: translateY(-100%);
+      opacity: 0;
+      visibility: hidden;
+      transition: transform 0.4s ease, opacity 0.4s ease, visibility 0.4s ease;
+      z-index: 1000; /* Above everything else */
+    }
+  
+    .menu.active {
+      transform: translateY(0); /* Slide down into view */
+      opacity: 1;
+      visibility: visible;
+    }
+  
+    .menu a {
+      font-size: 1.5rem; /* Larger text */
+      font-weight: 800; /* Bold for emphasis */
+      margin: 10px 0;
+      text-align: center;
+      color: #ffffff;
+      text-transform: uppercase;
+      transition: color 0.3s ease;
+    }
+  
+    .menu a:hover {
+      color: #1BB0DA; /* Bright blue on hover */
+    }
+  
+    /* Divider Lines */
+    .divider {
+      width: 50%; /* Short divider */
+      height: 1px;
+      background-color: #ffffff; /* White color */
+      margin: 10px 0;
+    }
+  
+    .menu-toggle {
+      display: block; /* Show hamburger menu on mobile */
+    }
+  }
+    
+
+
+/* ===========================================================
+   Hero Section with Image Background
+   =========================================================== */
+   .hero-section {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #f7f7f7;
+}
+
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('assets/pic3.jpg'); /* Path to the image */
+    background-size: cover; /* Ensures the image covers the entire section */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat;
+    z-index: 0; /* Ensures it stays behind the content */
+}
+
+.hero-section .content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    padding: 0 20px;
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #ffffff;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+}
+
+.hero-title .highlight {
+    color: #1BB0DA; /* Bright blue for highlights */
+    text-shadow: 3px 3px 15px rgba(27, 176, 218, 0.6);
+}
+
+.hero-button {
+    display: inline-block;
+    padding: 12px 40px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: white;
+    background: linear-gradient(135deg, #F06021, #1BB0DA);
+    border: none;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.hero-button:hover {
+    background: linear-gradient(135deg, #1BB0DA, #F06021);
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.4rem;
+    }
+
+    .hero-button {
+        padding: 10px 30px;
+        font-size: 1rem;
+        border-radius: 25px;
+    }
+}
+
+/* ===========================================================
+   Concept Section
+   =========================================================== */
+   .concept-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    background-color: #f9f9f9; /* Light background for contrast */
+    gap: 20px;
+}
+
+.concept-content {
+    flex: 1;
+    max-width: 600px;
+}
+
+.concept-content h2 {
+    font-size: 1.5rem;
+    color: #1BB0DA; /* Bright blue for section title */
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.concept-content h3 {
+    font-size: 2rem;
+    color: #F06021; /* Vibrant orange for emphasis */
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.concept-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555; /* Neutral gray for body text */
+    margin-bottom: 20px;
+}
+
+.concept-link {
+    font-size: 1rem;
+    color: #1BB0DA; /* Blue for links */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.concept-link:hover {
+    color: #F06021; /* Orange hover effect for links */
+}
+
+.concept-images {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.concept-images img {
+    width: calc(50% - 10px);
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.concept-images img:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Elevated shadow on hover */
+}
+
+@media (max-width: 768px) {
+    .concept-section {
+        flex-direction: column;
+    }
+
+    .concept-images img {
+        width: 100%;
+    }
+}
+
+
+/* ===========================================================
+   Location Section
+   =========================================================== */
+   .location-section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #ffffff; /* Clean white background */
+    color: #333; /* Neutral text color */
+}
+
+.location-section h2 {
+    font-size: 2rem;
+    margin-top: -45px;
+    margin-bottom: 20px;
+    color: #F06021; /* Bright orange for the heading */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #F06021; /* Underline for emphasis */
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.location-section p {
+    font-size: 1.1rem;
+    color: #555; /* Subtle text color for description */
+    margin-bottom: 30px;
+}
+
+.map-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto; /* Center the map on the page */
+    border: 1px solid #ddd; /* Subtle border for the map */
+    border-radius: 8px; /* Rounded corners for a modern look */
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.map-container:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+    transform: scale(1.02); /* Slight zoom on hover */
+}
+
+iframe {
+    display: block;
+    width: 100%;
+    height: 400px;
+    border: none; /* Remove iframe border */
+}
+
+
+/* ----------------- logo link to main page --------------- */
+
+/* Logo Link Styling */
+.logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none; /* Remove underline */
+    color: #ffffff; /* Text color for the logo name */
+    gap: 10px; /* Spacing between the logo image and the text */
+}
+
+.logo-link:hover {
+    text-decoration: none; /* Ensure no underline on hover */
+    opacity: 0.9; /* Slight transparency on hover for effect */
+}
+
+/* Logo Image */
+.logo-image {
+    height: 55px; /* Increased height to better match logo name size */
+    width: auto; /* Maintain aspect ratio */
+    transition: transform 0.3s ease; /* Smooth zoom effect */
+}
+
+.logo-link:hover .logo-image {
+    transform: scale(1.1); /* Enlarge the logo on hover */
+}
+
+
+/* ===========================================================
+   Footer Styling
+   =========================================================== */
+   .footer {
+    background-color: #1a1a1a; /* Dark background */
+    color: #d1d1d1; /* Subtle light gray text */
+    padding: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    font-family: 'Poppins', sans-serif;
+    border-top: 1px solid #333; /* Thin border for definition */
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+    text-align: left;
+}
+
+.footer-details,
+.footer-social,
+.footer-rate,
+.footer-jobs {
+    flex: 1 1 calc(33% - 20px); /* Each section takes 33% width */
+    min-width: 250px;
+}
+
+.footer-details h3,
+.footer-social h3,
+.footer-rate h3,
+.footer-jobs h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #F06021; /* Bright orange for headings */
+    border-bottom: 2px solid #444; /* Subtle underline for separation */
+    padding-bottom: 10px;
+}
+
+.footer-details p,
+.footer-rate p,
+.footer-jobs p {
+    font-size: 1rem;
+    color: #d1d1d1; /* Subtle light gray for text */
+    line-height: 1.6;
+}
+
+.footer-details a,
+.footer-rate a,
+.footer-jobs a {
+    color: #1BB0DA; /* Bright blue for links */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+.footer-details a:hover,
+.footer-rate a:hover,
+.footer-jobs a:hover {
+    color: #F06021; /* Bright orange on hover */
+}
+
+/* Social Links */
+.social-links {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+.social-icon {
+    font-size: 1.75rem;
+    color: #d1d1d1; /* Light gray for icons */
+    transition: transform 0.3s, color 0.3s;
+}
+
+.social-icon:hover {
+    color: #1BB0DA; /* Bright blue on hover */
+    transform: scale(1.1);
+}
+
+/* Job Link Styling */
+.job-link {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #333; /* Darker background for the button */
+    color: #d1d1d1; /* Light gray text */
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.job-link:hover {
+    background-color: #1BB0DA; /* Bright blue hover background */
+    color: #1a1a1a; /* Dark text for contrast */
+    transform: scale(1.05);
+}
+
+/* Rate Us Section */
+.footer-rate h3 {
+    color: #F06021; /* Bright orange heading for Rate Us */
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #444; /* Subtle underline for definition */
+    padding-bottom: 10px;
+}
+
+.footer-rate p {
+    font-size: 1rem;
+    color: #d1d1d1;
+    line-height: 1.6;
+}
+
+.footer-rate a {
+    color: #1BB0DA; /* Bright blue link for Rate Us */
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-rate a:hover {
+    color: #F06021; /* Bright orange on hover */
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #666; /* Subtle gray */
+    border-top: 1px solid #333; /* Thin top border */
+    padding-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .footer-details,
+    .footer-social,
+    .footer-rate,
+    .footer-jobs {
+        flex: 1 1 100%;
+        text-align: center; /* Center align on mobile */
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+}

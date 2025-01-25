@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu - Hambella</title>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const pdfLink = 'assets/menu.pdf'; // Ensure the file path matches your directory structure
+
+      // Check if the user is on a mobile device
+      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+      if (isMobile) {
+        // Redirect to the PDF directly on mobile
+        window.location.href = pdfLink;
+      } else {
+        // Open the PDF in a new tab on desktop
+        window.open(pdfLink, '_blank');
+      }
+    });
+  </script>
+</head>
+<body>
+
+</body>
+</html>
