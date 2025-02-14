@@ -1,27 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Menu - Hambella</title>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const pdfLink = 'assets/menu.pdf'; // Ensure the file path matches your directory structure
-
-      // Check if the user is on a mobile device
-      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-
-      if (isMobile) {
-        // Redirect to the PDF directly on mobile
-        window.location.href = pdfLink;
-      } else {
-        // Open the PDF in a new tab on desktop
-        window.open(pdfLink, '_blank');
-      }
-    });
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
+
+    <!-- Back to Main Page Button -->
+    <div class="back-button-container">
+        <a href="index.html" class="back-button">Back to Main Page</a>
+    </div>
+
+    <!-- Menu Section -->
+    <section class="menu-section">
+
+
+        <!-- Mojitos Section -->
+        <h2 class="category-title">Mojitos</h2>
+        <p class="section-description">Refreshing and fruity mojitos made with fresh ingredients.</p>
+        <div class="menu-items-grid">
+            <div class="menu-item"><img src="assets/Hambella Cafe_    Blue lagon mojito_EbrahimAlruqaimi.jpg" alt="Blue Lagoon Mojito"><p class="item-name">Blue Lagoon Mojito</p></div>
+            <div class="menu-item"><img src="assets/Hambella Cafe_   cherry mojito_EbrahimAlruqaimi.jpg" alt="Cherry Mojito"><p class="item-name">Cherry Mojito</p></div>
+            <div class="menu-item"><img src="assets/Hambella Cafe_  strawberry mojito_EbrahimAlruqaimi.jpg" alt="Strawberry Mojito"><p class="item-name">Strawberry Mojito</p></div>
+            <div class="menu-item"><img src="assets/Hambella Cafe_ mando passion mojito + passion fruit mojito_EbrahimAlruqaimi.jpg" alt="Passion Mojito"><p class="item-name">Mango Passion & Passion Fruit Mojito</p></div>
+        </div>
+
+        <!-- Cold Drinks Section -->
+        <h2 class="category-title">Cold Drinks</h2>
+        <p class="section-description">Delicious and creamy cold drinks to keep you refreshed.</p>
+        <div class="menu-items-grid">
+            <div class="menu-item"><img src="assets/Hambella Cafe_    matcha spainch_EbrahimAlruqaimi.jpg" alt="Matcha Spinach"><p class="item-name">Matcha Spinach</p></div>
+            <div class="menu-item"><img src="assets/Hambella Cafe_   matcha latte_EbrahimAlruqaimi.jpg" alt="Matcha Latte"><p class="item-name">Matcha Latte</p></div>
+            <div class="menu-item"><img src="assets/Hambella Cafe_   ice latte+ ice spansh_EbrahimAlruqaimi.jpg" alt="Iced Latte & Spanish Latte"><p class="item-name">Iced Latte & Spanish Latte</p></div>
+            <div class="menu-item"><img src="assets/Hambella Cafe_  moch latte + white mocha _EbrahimAlruqaimi.jpg" alt="Moch Latte & White Mocha"><p class="item-name">Moch Latte + White Mocha</p></div>
+            <div class="menu-item"><img src="assets/Hambella Cafe_  salted carmal frap_EbrahimAlruqaimi.jpg" alt="Salted Caramel Frap"><p class="item-name">Salted Caramel Frap</p></div>
+            <div class="menu-item"><img src="assets/Hambella Cafe_ pina colada_EbrahimAlruqaimi.jpg" alt="Pina Colada"><p class="item-name">Pina Colada</p></div>
+        </div>
+
+        <!-- Hot Drinks Section -->
+        <h2 class="category-title">Hot Drinks</h2>
+        <p class="section-description">Cozy and comforting hot drinks, perfect for any time of the day.</p>
+        <div class="menu-items-grid">
+            <div class="menu-item"><img src="assets/Hambella Cafe_   hot amricano_EbrahimAlruqaimi.jpg" alt="Hot Americano"><p class="item-name">Hot Americano</p></div>
+            <div class="menu-item"><img src="assets/Hambella Cafe_  Amrucano_EbrahimAlruqaimi.jpg" alt="Americano"><p class="item-name">Americano</p></div>
+            <div class="menu-item"><img src="assets/Hambella Cafe_  espresso_EbrahimAlruqaimi.jpg" alt="Espresso"><p class="item-name">Espresso</p></div>
+            <div class="menu-item"><img src="assets/Hambella Cafe_ cappuccino + Latte_EbrahimAlruqaimi.jpg" alt="Cappuccino & Latte"><p class="item-name">Cappuccino + Latte</p></div>
+            <div class="menu-item"><img src="assets/Hambella Cafe_ Cinnamon Latte_EbrahimAlruqaimi.jpg" alt="Cinnamon Latte"><p class="item-name">Cinnamon Latte</p></div>
+        </div>
+
+        <!-- Pastries Section -->
+        <h2 class="category-title">Pastries</h2>
+        <p class="section-description">Freshly baked and delicious pastries to pair with your drinks.</p>
+        <div class="menu-items-grid">
+            <div class="menu-item"><img src="assets/Hambella Cafe_   Cheese croissant_EbrahimAlruqaimi.jpg" alt="Cheese Croissant"><p class="item-name">Cheese Croissant</p></div>
+            <div class="menu-item"><img src="assets/Hambella Cafe_  Plain croissant_EbrahimAlruqaimi.jpg" alt="Plain Croissant"><p class="item-name">Plain Croissant</p></div>
+            <div class="menu-item"><img src="assets/Hambella Cafe_ dulce de leche_EbrahimAlruqaimi.jpg" alt="Dulce De Leche"><p class="item-name">Dulce De Leche</p></div>
+            <div class="menu-item"><img src="assets/Hambella Cafe_ Triple Chocolate Cookies_EbrahimAlruqaimi.jpg" alt="Triple Chocolate Cookies"><p class="item-name">Triple Chocolate Cookies</p></div>
+            <div class="menu-item"><img src="assets/Hambella Cafe_Red Velvet Cookies_EbrahimAlruqaimi.jpg" alt="Red Velvet Cookies"><p class="item-name">Red Velvet Cookies</p></div>
+            <div class="menu-item"><img src="assets/Hambella Cafe_stuffed coockies _EbrahimAlruqaimi.jpg" alt="Stuffed Cookies"><p class="item-name">Stuffed Cookies</p></div>
+        </div>
+    </section>
+
+<!-- Pop-up Modal -->
+<div id="popup-modal" class="popup-modal">
+  <div class="popup-content">
+      <img id="popup-image" src="" alt="Popup Item">
+      <h2 id="popup-item-name"></h2>
+      <button class="close-button">Close</button>
+  </div>
+</div>
+
 
 </body>
 </html>

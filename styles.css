@@ -583,3 +583,382 @@ iframe {
         justify-content: center;
     }
 }
+
+
+/* ===========================================================
+   General Styles & Menu Section
+   =========================================================== */
+   html, body {
+    background-color: #F06021; /* Full orange background */
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden; /* Prevents unwanted scrolling */
+}
+
+.menu-section {
+    padding: 3rem 2rem; /* Moved content higher */
+    text-align: center;
+    min-height: 100vh; /* Ensures full coverage */
+}
+
+/* Category Title */
+.category-title {
+    font-size: 3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #fff;
+    margin: 2.5rem 0 2rem; /* Reduced margin to move it up */
+    border-bottom: 5px solid #1BB0DA;
+    padding-bottom: 1rem;
+    letter-spacing: 1.5px;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Ensure No Extra Padding at the Top */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===========================================================
+   General Styles & Menu Section
+   =========================================================== */
+   body {
+    background-color: #F06021; /* Full orange background */
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.menu-section {
+    padding: 4rem 2rem; /* Moved content higher */
+    text-align: center;
+}
+
+/* Category Title */
+.category-title {
+    font-size: 3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #fff; /* White for better contrast */
+    margin: 3rem 0 2rem;
+    border-bottom: 5px solid #1BB0DA; /* Blue border for contrast */
+    padding-bottom: 1rem;
+    letter-spacing: 1.5px;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Section Description */
+.section-description {
+    font-size: 1.6rem;
+    color: #fff; /* White text for visibility */
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+
+/* ===========================================================
+   Adjusted Menu Section - Items Start RIGHT After Back Button
+   =========================================================== */
+   .menu-section {
+    padding: 0 2rem 3rem; /* No space on top, only side padding */
+    text-align: center;
+    min-height: 100vh;
+}
+
+/* Adjust Back Button */
+.back-button-container {
+    margin-bottom: 0; /* NO space below the back button */
+}
+
+/* Adjust Category Titles */
+.category-title {
+    margin: 0.2rem 0 0.3rem; /* Literally as close as possible */
+    font-size: 2.6rem; /* Still readable */
+}
+
+/* Adjust Menu Grid */
+.menu-items-grid {
+    gap: 0.5rem; /* Even tighter spacing */
+    margin-top: 0; /* REMOVE any margin */
+}
+
+/* Adjust Menu Item */
+.menu-item {
+    width: 310px;
+    padding: 0.8rem; /* As compact as possible */
+}
+
+
+/* ===========================================================
+   Menu Items Grid
+   =========================================================== */
+.menu-items-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2.5rem; /* Good spacing */
+}
+
+/* Menu Item */
+.menu-item {
+    background: #fff;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 18px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    padding: 1.8rem;
+    width: 320px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menu-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Item Image */
+.menu-item img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-bottom: 3px solid rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+}
+
+/* Item Name */
+.item-name {
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: #F06021; /* Orange */
+    margin: 1.5rem 0 1rem;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+}
+
+/* Item Price */
+.item-price {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #1BB0DA; /* Blue */
+    margin-bottom: 1.2rem;
+}
+
+/* Item Description */
+.item-description {
+    font-size: 1.5rem;
+    color: #000; /* Black for readability */
+    margin: 1rem 0;
+    line-height: 1.7;
+    font-weight: 500;
+}
+
+/* ===========================================================
+   Back Button - Now Matches Full Orange Background
+   =========================================================== */
+.back-button-container {
+    text-align: center;
+    margin: 2rem 0; /* Reduced spacing to move menu up */
+}
+
+.back-button {
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #1BB0DA; /* Blue for contrast */
+    padding: 0.8rem 2.5rem;
+    border: none;
+    border-radius: 30px;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: inline-block;
+}
+
+.back-button:hover {
+    background-color: #F06021; /* Switch to orange on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+}
+
+/* Mobile Friendly */
+@media (max-width: 768px) {
+    .back-button {
+        font-size: 1.4rem;
+        padding: 0.7rem 2rem;
+        border-radius: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .back-button {
+        font-size: 1.3rem;
+        padding: 0.6rem 1.8rem;
+        border-radius: 20px;
+    }
+}
+
+/* ===========================================================
+   Responsive Design - Ensuring a Clean Layout
+   =========================================================== */
+@media (max-width: 1024px) {
+    .menu-item {
+        width: 300px;
+        padding: 1.8rem;
+    }
+
+    .category-title {
+        font-size: 2.8rem;
+    }
+
+    .menu-item img {
+        height: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-section {
+        padding: 4rem 1.5rem;
+    }
+
+    .category-title {
+        font-size: 2.6rem;
+    }
+
+    .section-description {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .menu-item {
+        width: 95%;
+        padding: 2rem;
+    }
+
+    .menu-item img {
+        height: 180px;
+    }
+
+    .item-name {
+        font-size: 2rem;
+    }
+
+    .item-price {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .menu-section {
+        padding: 3rem 1rem;
+    }
+
+    .category-title {
+        font-size: 2.4rem;
+    }
+
+    .menu-item {
+        width: 100%;
+        padding: 1.8rem;
+    }
+
+    .menu-item img {
+        height: 160px;
+    }
+
+    .item-name {
+        font-size: 1.8rem;
+    }
+
+    .item-price {
+        font-size: 1.5rem;
+    }
+
+    .item-description {
+        font-size: 1.3rem;
+    }
+}
+/* ===========================================================
+   Pop-up Modal Styling
+   =========================================================== */
+   .popup-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Dark overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* This class makes the popup visible */
+.popup-modal.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Popup Content Box */
+.popup-content {
+    background-color: #fff;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 450px;
+    width: 90%;
+}
+
+/* Image Styles */
+.popup-content img {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+    border-radius: 10px;
+}
+
+/* Title Styles */
+.popup-content h2 {
+    font-size: 2.2rem;
+    color: #F06021; /* Bright orange */
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+/* Close Button */
+.close-button {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+    background-color: #F06021; /* Bright orange */
+    border: none;
+    border-radius: 15px;
+    padding: 0.8rem 1.5rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Close Button Hover */
+.close-button:hover {
+    background-color: #1BB0DA; /* Switch to blue on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}

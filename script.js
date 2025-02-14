@@ -83,3 +83,45 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+document.addEventListener("DOMContentLoaded", function () {
+    // Select the modal and content elements
+    const popupModal = document.getElementById("popup-modal");
+    const popupImage = document.getElementById("popup-image");
+    const popupItemName = document.getElementById("popup-item-name");
+    const closeButton = document.querySelector(".close-button");
+
+    // Function to show the popup with item details
+    function showPopup(element) {
+        const itemImage = element.querySelector("img").src;
+        const itemName = element.querySelector(".item-name").innerText;
+
+        // Update the popup content
+        popupImage.src = itemImage;
+        popupItemName.innerText = itemName;
+
+        // Show the modal
+        popupModal.classList.add("show");
+    }
+
+    // Function to hide the popup
+    function hidePopup() {
+        popupModal.classList.remove("show");
+    }
+
+    // Attach event listener to all menu items
+    document.querySelectorAll(".menu-item").forEach((item) => {
+        item.addEventListener("click", function () {
+            showPopup(this);
+        });
+    });
+
+    // Close the popup when clicking outside the content
+    popupModal.addEventListener("click", function (event) {
+        if (event.target === popupModal) {
+            hidePopup();
+        }
+    });
+
+    // Close button event
+    closeButton.addEventListener("click", hidePopup);
+});
