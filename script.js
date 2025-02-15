@@ -83,45 +83,44 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
-document.addEventListener("DOMContentLoaded", function () {
-    // Select the modal and content elements
+document.addEventListener("DOMContentLoaded", () => {
+    const menuItems = document.querySelectorAll(".menu-item");
     const popupModal = document.getElementById("popup-modal");
     const popupImage = document.getElementById("popup-image");
     const popupItemName = document.getElementById("popup-item-name");
+    const popupItemPrice = document.getElementById("popup-item-price"); // Price Element
     const closeButton = document.querySelector(".close-button");
 
-    // Function to show the popup with item details
-    function showPopup(element) {
-        const itemImage = element.querySelector("img").src;
-        const itemName = element.querySelector(".item-name").innerText;
+    // Function to show pop-up
+    function showPopup(item) {
+        const imageSrc = item.querySelector("img").src;
+        const itemName = item.querySelector(".item-name").textContent;
+        const itemPrice = item.querySelector(".item-price") ? item.querySelector(".item-price").textContent : ""; // Get price if exists
 
-        // Update the popup content
-        popupImage.src = itemImage;
-        popupItemName.innerText = itemName;
+        popupImage.src = imageSrc;
+        popupItemName.textContent = itemName;
+        popupItemPrice.textContent = itemPrice; // Add price to pop-up
 
-        // Show the modal
         popupModal.classList.add("show");
     }
 
-    // Function to hide the popup
-    function hidePopup() {
+    // Add event listener to each menu item
+    menuItems.forEach(item => {
+        item.addEventListener("click", () => showPopup(item));
+    });
+
+    // Close modal when clicking outside the content
+    popupModal.addEventListener("click", () => {
         popupModal.classList.remove("show");
-    }
-
-    // Attach event listener to all menu items
-    document.querySelectorAll(".menu-item").forEach((item) => {
-        item.addEventListener("click", function () {
-            showPopup(this);
-        });
     });
 
-    // Close the popup when clicking outside the content
-    popupModal.addEventListener("click", function (event) {
-        if (event.target === popupModal) {
-            hidePopup();
-        }
+    // Prevent closing when clicking inside content
+    document.querySelector(".popup-content").addEventListener("click", (event) => {
+        event.stopPropagation();
     });
 
-    // Close button event
-    closeButton.addEventListener("click", hidePopup);
+    // Close modal when clicking the close button
+    closeButton.addEventListener("click", () => {
+        popupModal.classList.remove("show");
+    });
 });
