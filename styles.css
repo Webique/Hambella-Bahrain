@@ -693,7 +693,7 @@ iframe {
 }
 
 /* ===========================================================
-   Image Box - Perfectly Scaled Images (No Stretching)
+   Image Box - No Stretching (Only on Phones)
    =========================================================== */
 .image-container {
     width: 100%;
@@ -706,11 +706,11 @@ iframe {
 }
 
 .image-container img {
-    max-width: 90%; /* ✅ NEW: Prevents stretching, keeps original size */
-    max-height: 100%; /* ✅ NEW: Ensures full image fits */
-    object-fit: contain; /* ✅ NEW: Ensures full image is visible without cutting */
-    object-position: center; /* Centers the image */
-    border-radius: 12px; /* Rounded corners for images */
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensures the whole image is visible */
+    object-position: center;
+    border-radius: 12px;
 }
 
 /* ===========================================================
@@ -770,7 +770,7 @@ iframe {
 }
 
 /* ===========================================================
-   ✅ FINAL FIX: No Image Stretching on Phones 🚀
+   ✅ FINAL FIX: REDUCE IMAGE WIDTH ON PHONES 🚀
    =========================================================== */
 @media (max-width: 480px) {
     .menu-section {
@@ -783,16 +783,20 @@ iframe {
     }
 
     .image-container {
-        height: 320px; /* Even taller for small phones */
+        height: 320px; /* Taller for small phones */
+        width: 85% !important; /* ✅ NEW: Make images slightly narrower on phones */
+        max-width: 280px !important; /* ✅ Prevents images from being too wide */
     }
 
-    /* 👇 **✅ NEW FIX: Images KEEP their original width, even if there's space on the sides** 👇 */
+    /* ✅ NEW FIX: Keep images proportional, no stretching */
     .image-container img {
-        width: auto; /* ✅ NEW: Keeps actual width */
-        max-width: 90%; /* ✅ Prevents full stretching */
-        height: 100%; /* Ensures image remains centered */
-        object-fit: contain; /* Ensures full image is visible */
+        width: auto !important; /* ✅ Forces natural width */
+        max-width: 100% !important; /* ✅ Prevents full stretching */
+        height: 100% !important; /* ✅ Ensures full height fits */
+        object-fit: contain !important; /* ✅ Keeps full image visible */
         object-position: center;
+        display: block; /* ✅ Fixes weird spacing */
+        margin: 0 auto; /* ✅ Centers image inside the container */
     }
 
     .item-name {
@@ -807,6 +811,8 @@ iframe {
         font-size: 1.3rem;
     }
 }
+
+
 
 /* ===========================================================
    Back Button - Now Matches Full Orange Background
