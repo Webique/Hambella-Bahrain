@@ -686,6 +686,49 @@ iframe {
     flex-direction: column;
     justify-content: space-between;
 }
+/* ===========================================================
+   ✅ PHONE-SPECIFIC FIX: ROUNDER BORDERS & NO IMAGE STRETCHING 🚀
+   =========================================================== */
+   @media (max-width: 768px) { 
+    .menu-item {
+        background: #fff;
+        border: 2px solid rgba(0, 0, 0, 0.1);
+        border-radius: 22px; /* ✅ More rounded corners ONLY on phone */
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        text-align: center;
+        padding: 1.8rem;
+        width: 300px; /* ✅ Slightly narrower container on phone */
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* ✅ Keep image proportionate & prevent stretching */
+    .image-container {
+        width: 100%;
+        max-width: 250px; /* ✅ Prevents too much width */
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        border-radius: 18px; /* ✅ Slightly rounded */
+    }
+
+    .image-container img {
+        width: auto;
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
+        object-position: center;
+        display: block;
+        margin: 0 auto;
+    }
+}
+
 
 .menu-item:hover {
     transform: translateY(-6px);
@@ -770,9 +813,9 @@ iframe {
 }
 
 /* ===========================================================
-   ✅ FINAL FIX: REDUCE IMAGE WIDTH ON PHONES 🚀
+   ✅ FINAL FIX: FORCE IMAGE CONTAINER TO BE LESS WIDE ON PHONES 🚀
    =========================================================== */
-@media (max-width: 480px) {
+   @media (max-width: 480px) {
     .menu-section {
         padding: 3rem 1rem;
     }
@@ -782,20 +825,27 @@ iframe {
         padding: 1.8rem;
     }
 
+    /* ✅ REDUCE IMAGE CONTAINER WIDTH */
     .image-container {
-        height: 320px; /* Taller for small phones */
-        width: 85% !important; /* ✅ NEW: Make images slightly narrower on phones */
-        max-width: 280px !important; /* ✅ Prevents images from being too wide */
+        height: 320px; /* Keep height for proportions */
+        width: 80% !important; /* ✅ Reduce width */
+        max-width: 220px !important; /* ✅ Even less wide */
+        margin: 0 auto; /* ✅ Ensure it's centered */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        border-radius: 12px;
     }
 
-    /* ✅ NEW FIX: Keep images proportional, no stretching */
+    /* ✅ ENSURE IMAGE IS NOT STRETCHING */
     .image-container img {
-        width: auto !important; /* ✅ Forces natural width */
+        width: auto !important; /* ✅ Keep natural width */
         max-width: 100% !important; /* ✅ Prevents full stretching */
         height: 100% !important; /* ✅ Ensures full height fits */
         object-fit: contain !important; /* ✅ Keeps full image visible */
-        object-position: center;
-        display: block; /* ✅ Fixes weird spacing */
+        object-position: center !important;
+        display: block; /* ✅ Fixes spacing issues */
         margin: 0 auto; /* ✅ Centers image inside the container */
     }
 
@@ -811,7 +861,6 @@ iframe {
         font-size: 1.3rem;
     }
 }
-
 
 
 /* ===========================================================
